@@ -1,14 +1,17 @@
-package me.zeph.model;
+package com.uv.model;
 
 public class User {
 
     private String phoneNumber;
+    private String name;
 
     public User() {
     }
 
-    public User(String phoneNumber) {
+    public User(String phoneNumber, String name) {
         this.phoneNumber = phoneNumber;
+        this.name = name;
+
     }
 
     public String getPhoneNumber() {
@@ -17,5 +20,13 @@ public class User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

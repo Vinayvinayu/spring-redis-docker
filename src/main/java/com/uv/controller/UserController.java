@@ -1,7 +1,7 @@
-package me.zeph.controller;
+package com.uv.controller;
 
-import me.zeph.model.User;
-import me.zeph.service.UserService;
+import com.uv.model.User;
+import com.uv.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;

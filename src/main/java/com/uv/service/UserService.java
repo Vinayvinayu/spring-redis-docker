@@ -1,8 +1,8 @@
-package me.zeph.service;
+package com.uv.service;
 
-import me.zeph.converter.BytesToUserConverter;
-import me.zeph.converter.UserToBytesConverter;
-import me.zeph.model.User;
+import com.uv.converter.BytesToUserConverter;
+import com.uv.model.User;
+import com.uv.converter.UserToBytesConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;

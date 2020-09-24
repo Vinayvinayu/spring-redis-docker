@@ -1,25 +1,25 @@
-package me.zeph.converter;
+package com.uv.converter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import me.zeph.model.User;
+import com.uv.model.User;
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.data.convert.WritingConverter;
+import org.springframework.data.convert.ReadingConverter;
 import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
 import org.springframework.stereotype.Component;
 
 @Component
-@WritingConverter
-public class UserToBytesConverter implements Converter<User, byte[]> {
+@ReadingConverter
+public class BytesToUserConverter implements Converter<byte[], User> {
 
     private final Jackson2JsonRedisSerializer<User> serializer;
 
-    public UserToBytesConverter() {
+    public BytesToUserConverter() {
         serializer = new Jackson2JsonRedisSerializer<>(User.class);
         serializer.setObjectMapper(new ObjectMapper());
     }
 
     @Override
-    public byte[] convert(User value) {
-        return serializer.serialize(value);
+    public User convert(byte[] value) {
+        return serializer.deserialize(value);
     }
 }
